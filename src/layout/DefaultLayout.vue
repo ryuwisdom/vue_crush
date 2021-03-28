@@ -2,11 +2,20 @@
   <div class="app-container">
     <header class="header">
       <div class="button-container">
-        <button class="btn" v-for="btn in tabButtons" :key="btn" @click="click(btn)">{{ btn }}</button>
+        <button
+          class="btn"
+          v-for="btn in tabButtons"
+          :key="btn"
+          @click="click(btn)"
+        >
+          {{ btn }}
+        </button>
       </div>
     </header>
     <div class="main-container">
-      <component :is="childComponents"></component>
+      <component :is="childComponents">
+        <p>{{ currentTab }}</p>
+      </component>
     </div>
     <footer class="footer">footer</footer>
   </div>
@@ -15,32 +24,32 @@
 <script>
 export default {
   components: {
-    'FirstChild': () => import("@/components/FirstChild"),
-    'SecondChild': () => import('@/components/SecondChild'),
-    'ThirdChild': () => import('@/components/ThirdChild')
+    FirstChild: () => import('@/components/FirstChild'),
+    SecondChild: () => import('@/components/SecondChild'),
+    ThirdChild: () => import('@/components/ThirdChild'),
   },
   data() {
     return {
       currentTab: 1,
-      tabButtons: [1, 2, 3]
-    }
+      tabButtons: [1, 2, 3],
+    };
   },
   computed: {
     childComponents() {
-      let tab = 'FirstChild'
-      if (this.currentTab === 2) tab = 'SecondChild'
-      if (this.currentTab === 3) tab = 'ThirdChild'
-      return tab
-    }
+      let tab = 'FirstChild';
+      if (this.currentTab === 2) tab = 'SecondChild';
+      if (this.currentTab === 3) tab = 'ThirdChild';
+      return tab;
+    },
   },
   methods: {
     click(btn) {
-      console.log(btn)
-      return this.currentTab = btn
-    }
-  }
-}
-
+      console.log(btn);
+      this.currentTab = btn;
+      this.$emit('button', this.currentTab);
+    },
+  },
+};
 </script>
 
 <style>
@@ -66,6 +75,7 @@ export default {
 }
 
 .main-container {
+  padding-top: 24px;
   height: 100vh;
   width: 90%;
   background-color: mintcream;
@@ -92,5 +102,11 @@ export default {
   position: fixed;
   bottom: 0;
   background-color: wheat;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
