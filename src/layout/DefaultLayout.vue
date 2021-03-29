@@ -24,13 +24,12 @@ export default {
   components: {},
   data() {
     return {
-      currentTab: 1,
-      tabButtons: [1, 2, 3],
+      currentTab: 'first',
+      tabButtons: ['first', 'second', 'third'],
     };
   },
   methods: {
     click(btn) {
-      console.log(btn);
       this.currentTab = btn;
       this.$emit('button', this.currentTab);
     },
@@ -95,3 +94,4 @@ footer {
   align-items: center;
 }
 </style>
+

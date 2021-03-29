@@ -1,14 +1,13 @@
-import Vue from 'vue'
-import App from './App.vue'
-// import StatusComponents from './Status'
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
+
 
 Vue.config.productionTip = false
-// Vue.component('AppStatus', StatusComponents )
+
 new Vue({
   render: h => h(App),
+    router,
 }).$mount('#app')
 
-Vue.component('todo-item', {
-    template: '<li>This is a todo</li>'
-})
 
