@@ -1,7 +1,6 @@
 <template>
   <div class="first-container">
     <h1>First Child Page</h1>
-    <slot></slot>
   </div>
 </template>
 <script>

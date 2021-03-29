@@ -6,12 +6,25 @@ import App from '@/App'
 Vue.use(VueRouter)
 
 const router = new VueRouter({
-    mode : "history",
-    routes : [
-        {path: '/', component: App },
-        {path: '/first', component: () => import('@/pages/FirstChild') },
-        {path: '/second', component: () => import('@/pages/SecondChild') },
-        {path: '/third', component: () => import('@/pages/ThirdChild') },
+    mode: "history",
+    routes: [
+        {
+            path: '/',
+            component: App
+        },
+        {
+            path: '/first',
+            component: () => import('@/pages/FirstChild'),
+        },
+
+        {
+            path: '/second',
+            component: () => import('@/pages/SecondChild')
+        },
+        {
+            path: '/third',
+            component: () => import('@/pages/ThirdChild')
+        },
     ]
 
 })

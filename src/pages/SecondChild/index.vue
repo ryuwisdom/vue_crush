@@ -1,7 +1,6 @@
 <template>
   <div class="second-container">
     <h1>Second Child Page</h1>
-    <slot></slot>
   </div>
 </template>
 <script>

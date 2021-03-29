@@ -13,7 +13,7 @@
       </div>
     </header>
     <div class="main-container">
-      <slot></slot>
+      <slot :btn="currentTab"></slot>
     </div>
     <footer class="footer">footer</footer>
   </div>
@@ -60,11 +60,11 @@ export default {
 }
 
 .main-container {
-  padding-top: 24px;
-  height: 100vh;
+  padding-top: 100px;
   width: 90%;
   background-color: mintcream;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0 auto;

@@ -1,7 +1,6 @@
 <template>
   <div class="third-container">
     <h1>Third Child Page</h1>
-    <slot></slot>
   </div>
 </template>
 <script>

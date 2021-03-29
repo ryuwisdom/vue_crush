@@ -1,11 +1,11 @@
 <template>
   <div class="app-container">
     <default-layout
-        @button="changedButton"
         class="default-layout-container"
+        @button="changedButton"
     >
-      <router-view><p>{{ nowTab }}</p></router-view>
-
+      {{ nowTab }}
+      <router-view></router-view>
     </default-layout>
   </div>
 </template>
@@ -13,7 +13,6 @@
 <script>
 import DefaultLayout from '@/layout/DefaultLayout';
 
-let tab = 'FirstChild';
 
 export default {
   components: {
@@ -24,13 +23,11 @@ export default {
       nowTab: 'first',
     }
   },
-  computed: {
-    childComponents() {
-      if (this.nowTab === 'second') tab = 'SecondChild';
-      if (this.nowTab === 'third') tab = 'ThirdChild';
-      return tab;
+  created(currentTab) {
+   console.log('+_+')
+    this.nowTab = currentTab
     },
-  },
+
   methods: {
     changedButton(currentTab) {
       this.nowTab = currentTab
@@ -45,15 +42,7 @@ export default {
   padding: 0;
   margin: 0;
 }
-
 .app-container {
   background-color: white;
-}
-
-.default-layout-container {
-  /*width: 100%;*/
-  display: flex;
-  flex-direction: column;
-
 }
 </style>
