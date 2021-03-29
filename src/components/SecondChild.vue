@@ -7,7 +7,7 @@
 <script>
 export default {};
 </script>
-<style>
+<style scoped>
 .second-container {
   width: 100%;
   height: 80vh;
