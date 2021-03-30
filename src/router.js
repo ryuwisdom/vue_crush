@@ -14,16 +14,18 @@ const router = new VueRouter({
         },
         {
             path: '/first',
-            component: () => import('@/pages/FirstChild'),
+            name: 'first',
+            component: () => import("@/pages/First")
         },
-
         {
             path: '/second',
-            component: () => import('@/pages/SecondChild')
-        },
-        {
+            name: 'second',
+            component: () => import("@/pages/Second")
+        }
+        , {
             path: '/third',
-            component: () => import('@/pages/ThirdChild')
+            name: 'third',
+            component: () => import("@/pages/Third")
         },
     ]
 
