@@ -1,9 +1,9 @@
 <template>
   <div class="app-container">
     <default-layout @button="move">
-      <keep-alive>
+<!--      <keep-alive>-->
         <router-view></router-view>
-      </keep-alive>
+<!--      </keep-alive>-->
       <h2>{{ now }} page</h2>
     </default-layout>
   </div>

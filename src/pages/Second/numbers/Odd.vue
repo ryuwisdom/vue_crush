@@ -1,14 +1,20 @@
 <template>
   <div class="odd-box">
-    <slot>
-      <h3>odd {{ number }}</h3>
-    </slot>
+    <h3 @click="click(name)">{{ name }} {{ number | separateNum }}</h3>
   </div>
 </template>
 
 <script>
+import mixins from '@/pages/Second/mixins.js';
+
 export default {
   props: ['number'],
+  mixins: [mixins],
+  data() {
+    return {
+      name: 'odd'
+    }
+  }
 }
 </script>
 

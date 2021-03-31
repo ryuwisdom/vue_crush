@@ -1,7 +1,7 @@
 <template>
   <div class="component-container">
     <br>
-    <div v-for="number in 100" :key="number">
+    <div v-for="number in 2" :key="number">
       <component :number="number" :is="numberComponent(number)">
       </component>
     </div>
@@ -18,6 +18,30 @@ export default {
       return number % 2 === 0 ? Even : Odd
     }
   },
+  beforeCreate() {
+    console.log('mom - beforeCreate')
+  },
+  created() {
+    console.log('mom - created')
+  },
+  beforeMount() {
+    console.log('mom - beforeMount')
+  },
+  mounted() {
+    console.log('mom - mounted')
+  },
+  beforeUpdate() {
+    console.log('mom - beforeUpdate')
+  },
+  updated() {
+    console.log('mom - updated')
+  },
+  beforeDestroy() {
+    console.log('mom - beforeDestroy')
+  },
+  destroyed() {
+    console.log('mom - destroy')
+  }
 }
 </script>
 

@@ -1,7 +1,7 @@
 <template>
   <div class="default-container">
     <header class="header-container">
-      <div>header</div>
+      <router-link to="/">header</router-link>
       <div class="button-box">
         <button v-for="btn in buttons" :key="btn" @click="click(btn)">{{ btn }}</button>
       </div>
