@@ -19,7 +19,7 @@ export default {
   data() {
     return {
       currentBtn: 'first',
-      buttons: ['first', 'second', 'third']
+      buttons: ['first', 'second', 'third','fourth']
     }
   },
   methods: {

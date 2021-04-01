@@ -1,10 +1,10 @@
 <template>
   <div class="app-container">
     <default-layout @button="move">
-<!--      <keep-alive>-->
-        <router-view></router-view>
-<!--      </keep-alive>-->
       <h2>{{ now }} page</h2>
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
     </default-layout>
   </div>
 </template>
@@ -29,13 +29,14 @@ export default {
       console.log('move move', currentBtn)
       this.now = currentBtn
       this.$router.push(`/${currentBtn}`).catch(err => err)
+      console.log()
     }
   },
 
 };
 </script>
 
-<style>
+<style scoped>
 html, body {
   height: 100%;
 }
