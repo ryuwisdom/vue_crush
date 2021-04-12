@@ -1,6 +1,5 @@
 <template>
-  <button type="button" @click="onClick"  >{{ label }}</button>
-
+  <button type="button" @click="onClick">{{ label }}</button>
 </template>
 
 <script>
@@ -24,9 +23,9 @@ export default {
     //     return ['small', 'medium', 'large'].indexOf(value) !== -1;
     //   },
     // },
-    // backgroundColor: {
-    //   type: String,
-    // },
+    backgroundColor: {
+      type: String,
+    },
   },
 
   computed: {
@@ -65,23 +64,28 @@ export default {
   display: inline-block;
   line-height: 1;
 }
+
 .storybook-button--primary {
   color: white;
   background-color: #1ea7fd;
 }
+
 .storybook-button--secondary {
   color: #333;
   background-color: transparent;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
 }
+
 .storybook-button--small {
   font-size: 12px;
   padding: 10px 16px;
 }
+
 .storybook-button--medium {
   font-size: 14px;
   padding: 11px 20px;
 }
+
 .storybook-button--large {
   font-size: 16px;
   padding: 12px 24px;

@@ -5,8 +5,7 @@
       <div class="button-box">
         <button v-for="btn in buttons" :key="btn" @click="click(btn)">{{ btn }}</button>
       </div>
-
-      <first-button ></first-button>
+      <first-button :label="currentBtn"></first-button>
     </header>
     <main class="main-container">
       <slot></slot>
@@ -17,7 +16,7 @@
 </template>
 
 <script>
-import FirstButton from '@/stories/FirstButton.vue';
+import FirstButton from '@/components/FirstButton.vue';
 export default {
   components : {
     FirstButton
@@ -25,7 +24,7 @@ export default {
   data() {
     return {
       currentBtn: 'first',
-      buttons: ['first', 'second', 'third','fourth']
+      buttons: ['first', 'second', 'third','fourth'],
     }
   },
   methods: {
